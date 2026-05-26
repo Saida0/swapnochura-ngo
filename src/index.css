@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset ── */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Inter', sans-serif; background: #fff; color: #1f2937; -webkit-font-smoothing: antialiased; }
+#root { width: 100%; min-height: 100vh; text-align: left; }
+
+/* ── Scroll reveal ── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ── Float ── */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+.float  { animation: float 5s ease-in-out infinite; }
+.float2 { animation: float 6s ease-in-out 1.5s infinite; }
+
+/* ── Blob morph ── */
+@keyframes morph {
+  0%,100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  50%      { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+}
+.blob { animation: morph 8s ease-in-out infinite; }
+
+/* ── Shimmer text ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #F4C430 0%, #fff 40%, #F4C430 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Progress bar ── */
+@keyframes grow-bar { from { width: 0; } }
+.bar-animate { animation: grow-bar 1.2s ease-out forwards; }
+
+/* ── Shared helpers ── */
+.card { background: #fff; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,.07); transition: transform .25s, box-shadow .25s; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,60,110,.13); }
+
+.btn-gold { display: inline-block; background: #F4C430; color: #0A183D; font-weight: 700; padding: 14px 34px; border-radius: 50px; text-decoration: none; border: none; cursor: pointer; transition: background .2s, transform .2s; }
+.btn-gold:hover { background: #FCD34D; transform: scale(1.04); }
+
+.btn-outline { display: inline-block; border: 2px solid rgba(255,255,255,.55); color: #fff; font-weight: 600; padding: 14px 34px; border-radius: 50px; text-decoration: none; transition: background .2s, border-color .2s; }
+.btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1A3C6E; border-radius: 3px; }
