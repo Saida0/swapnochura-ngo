@@ -1,16 +1,48 @@
-# React + Vite
+# Swapnochura Foundation website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website for Swapnochura Foundation (স্বপ্নচূড়া ফাউন্ডেশন), a volunteer-run non-profit in Rajshahi, Bangladesh that has worked on blood donation, tree planting, free health camps and education support since 2014.
 
-Currently, two official plugins are available:
+**Live site:** https://swapnochura-ngo.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Swapnochura home page](docs/screenshot.png)
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Four pages:** Home, About, Projects and Donate, plus a 404 page, using React Router.
+- **Impact numbers:** blood bags collected, trees planted and people treated, shown on the home page.
+- **Donate page:** suggested amounts and an animated "fund utilization" breakdown. It is front-end only and does not take payments.
+- **Help chatbot ("Swapna"):** answers common questions about blood donation, tree planting, health camps and education with keyword matching, in English and Bangla. It runs fully in the browser, with no backend or AI service.
+- **Scroll animations:** sections fade in as you scroll, using a small `useReveal` hook built on IntersectionObserver.
+- **Bilingual content:** Bangla and English text, responsive on mobile and desktop.
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Part | Tool |
+| --- | --- |
+| UI | React 19 |
+| Routing | React Router 7 |
+| Styling | Tailwind CSS 3 |
+| Icons | lucide-react |
+| Build | Vite |
+| Hosting | Vercel |
+
+## Run locally
+
+```bash
+npm install
+npm run dev      # start the dev server
+npm run build    # production build into dist/
+```
+
+## Project structure
+
+```
+src/
+  pages/        Home, About, Projects, Donate
+  components/   Navbar, Footer, Logo, ChatBot
+  hooks/        useReveal (scroll animations)
+```
+
+## Author
+
+Built by [Sumaya Binte Saida](https://github.com/Saida0).
